@@ -1,6 +1,6 @@
 
 import React, { useRef, useState, useEffect } from 'react';
-import { Settings, DEFAULT_BACKGROUNDS, Backend, CLOAK_PRESETS } from '../types';
+import { Settings, DEFAULT_BACKGROUNDS, CLOAK_PRESETS } from '../types';
 
 interface SettingsTabProps {
   settings: Settings;
@@ -167,24 +167,6 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ settings, updateSettin
                 />
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Backend Engine */}
-        <section>
-          <h3 className="text-lg font-bold mb-6 border-l-4 border-white pl-3 uppercase tracking-wider">Backend Engine</h3>
-          <div className="bg-black/40 backdrop-blur-md p-8 rounded-3xl border border-white/10 flex flex-wrap gap-3">
-            {Object.values(Backend).map((b) => (
-              <button
-                key={b}
-                onClick={() => updateSettings({ backend: b })}
-                className={`flex-1 min-w-[120px] py-4 rounded-2xl border transition-all text-center ${
-                  settings.backend === b ? 'bg-white text-black font-bold border-white' : 'bg-white/5 border-white/10 hover:bg-white/10'
-                }`}
-              >
-                <span className="text-xs uppercase tracking-widest">{b}</span>
-              </button>
-            ))}
           </div>
         </section>
 
